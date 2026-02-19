@@ -79,18 +79,27 @@
 
     <script>
 
+        window.addEventListener("resize", () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+        
         // ================= SCENE =================
         const scene = new THREE.Scene();
         scene.background = new THREE.Color(0x030b1f);
 
         // ================= CAMERA =================
         const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-        camera.position.z = 8;
+        camera.position.z = 15;
 
         // ================= RENDERER =================
         const renderer = new THREE.WebGLRenderer({ antialias: true });
         renderer.setSize(window.innerWidth, window.innerHeight);
         document.body.appendChild(renderer.domElement);
+
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setPixelRatio(window.devicePixelRatio);
 
         // =================================================
         // 🌙 BULAN SABIT (POJOK KIRI ATAS)
@@ -250,3 +259,4 @@
 
 
 </html>
+
