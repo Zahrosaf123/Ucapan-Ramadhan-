@@ -82,19 +82,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 
     <script>
-
-        window.addEventListener("resize", () => {
-            camera.aspect = window.innerWidth / window.innerHeight;
-            camera.updateProjectionMatrix();
-            renderer.setSize(window.innerWidth, window.innerHeight);
-        });
         
         // ================= SCENE =================
         const scene = new THREE.Scene();
         scene.background = new THREE.Color(0x030b1f);
 
         // ================= CAMERA =================
-        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 1000);
         camera.position.z = 10;
 
         // ================= RENDERER =================
@@ -113,7 +107,7 @@
         const bigGeo = new THREE.CircleGeometry(0.9, 64);
         const bigMat = new THREE.MeshBasicMaterial({ color: 0xffe066 });
         const bigMoon = new THREE.Mesh(bigGeo, bigMat);
-        bigMoon.position.set(-11.5, 4.5, 0);
+        bigMoon.position.set(-9, 4.5, 0);
         scene.add(bigMoon);
 
         // lingkaran kecil (untuk potong jadi sabit)
@@ -123,7 +117,7 @@
 
         // ⬅️ potong sedikit ke kanan saja (X beda sedikit)
         // Y HARUS SAMA biar rapi
-        smallMoon.position.set(-10.8, 4.5, 0.01);
+        smallMoon.position.set(-8.4, 4.5, 0.01);
         scene.add(smallMoon);
 
         // =================================================
@@ -174,7 +168,7 @@
         masjid.scale.set(8.5, 7.8, 1);
 
         // posisi di kanan dan di atas tanah
-        masjid.position.x = 8;     // geser ke kanan
+        masjid.position.x = 6.5;     // geser ke kanan
         masjid.position.y = -1.3;  // tepat di atas tanah
         masjid.position.z = 0;
 
@@ -263,6 +257,7 @@
 
 
 </html>
+
 
 
 
